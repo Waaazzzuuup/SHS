@@ -86,7 +86,7 @@ TEST_CASE ("Test_assigment2") {
 }
 
 TEST_CASE ("Test_plus_assigment_1") {
-    char *res = "plus_assigment";
+    char res[] = "plus_assigment";
     String A("plus_");
     size_t Asize = A.size();
     String B("assigment");
@@ -99,7 +99,7 @@ TEST_CASE ("Test_plus_assigment_1") {
 }
 
 TEST_CASE ("Test_plus_assigment_2") {
-    char *res = "plus_assigment";
+    char res[] = "plus_assigment";
     String C("plus_");
     size_t Csize = C.size();
     char A[] = "assigment";
@@ -118,7 +118,7 @@ TEST_CASE ("Test_plus_assigment_2") {
 }
 
 TEST_CASE ("Test_plus_assigment_3") {
-    char *res = "plus_";
+    char res[] = "plus_";
     String C("plus");
     size_t  Csize = C.size();
     char A = '_';
@@ -139,15 +139,15 @@ TEST_CASE ("Test_plus_assigment_3") {
 TEST_CASE ("Test_index") {
     String A("Test");
     A[1] = 'a';
-    char *res = "Tast";
+    char res[] = "Tast";
     for (unsigned i = 0; i <= A.size(); ++i) {
         REQUIRE(res[i] == A[i]);
     }
 }
 
 TEST_CASE ("Test_swap") {
-    char *res1 = "hgf";
-    char *res2 = "lkjhgf";
+    char res1[] = "hgf";
+    char res2[] = "lkjhgf";
     String A(res1);
     String B(res2);
     size_t Asize = A.size();
@@ -202,7 +202,7 @@ TEST_CASE ("Test_plus_1") {
 
 TEST_CASE ("Test_plus_2") {
     String A("Test_");
-    char * B = "plus_1";
+    char B[] = "plus_1";
     String C;
     String res("Test_plus_1");
     C = A + B;
